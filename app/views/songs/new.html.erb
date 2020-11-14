@@ -10,12 +10,6 @@
 
   <%= f.label :song_genre %>
   <%= f.collection_select :song_genre, Genre.all, :id, :name %>
-  <%= f.text_field :song_genre, list: "genres_autocomplete" %>
-    <datalist id="genres_autocomplete">
-      <% Genre.all.each do |genre| %>
-        <option value="<%= genre.id %> <%= genre.name %>">
-      <% end %>
-    </datalist>
 
   <%= f.submit %>
 <% end %>
